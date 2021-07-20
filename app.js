@@ -1,7 +1,7 @@
 const express = require ('express');
 const mongoose = require ('mongoose');
 const bodyParser = require ('body-parser');
-const Contacts2Route = require('./routes/Contacts2');
+
 require('dotenv').config();
 
 //
@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
 });
 
 const ContactsRoute = require ('./routes/Contacts');
+const Contacts2Route = require('./routes/Contacts2');
 
 app.use ('/contacts',ContactsRoute);
 app.use('/contacts2',Contacts2Route);

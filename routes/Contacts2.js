@@ -22,7 +22,7 @@ router.post("/signup", async (req, res) => {
     });
   
     await user.save();
-    var token = jwt.sign({ id: user.id }, "password");
+    var token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET);
     res.json({ token: token });
   });
 
@@ -41,7 +41,7 @@ router.post("/signup", async (req, res) => {
       return res.json({ msg: "password is not correct" });
     }
   
-    var token = jwt.sign({ id: user.id }, "password");
+    var token = jwt.sign({ id: user.id }, process.env.TOKEN_SECRET);
     return res.json({ token: token });
   });
 
