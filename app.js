@@ -1,7 +1,7 @@
 const express = require ('express');
 const mongoose = require ('mongoose');
 const bodyParser = require ('body-parser');
-const ContactsRoute2 = require('./routes/Contacts2');
+const Contacts2Route = require('./routes/Contacts2');
 require('dotenv').config();
 
 //
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 const ContactsRoute = require ('./routes/Contacts');
 
 app.use ('/contacts',ContactsRoute);
-app.use('/Contacts2',ContactsRoute2);
+app.use('/contacts2',Contacts2Route);
 
 //Starting server
 app.listen(port, console.log("Listening on port: ", port));
