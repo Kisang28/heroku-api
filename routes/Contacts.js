@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Quote = require('../models/Contacts');
-const verify = require('./verifyToken');
+const verify = require('../verifytoken');
 
 //Get all routes
 router.get('/', verify, async (req, res) => {
